@@ -95,7 +95,7 @@ export default function Quiz() {
         particleCount: 150,
         spread: 80,
         origin: { y: 0.6 },
-        colors: ['#10B981', '#34D399', '#FBBF24', '#F59E0B']
+        colors: ['#B8860B', '#D4A853', '#C4956A', '#E8C47C']
       });
       // Second burst for extra celebration
       setTimeout(() => {
@@ -103,13 +103,13 @@ export default function Quiz() {
           particleCount: 80,
           spread: 100,
           origin: { y: 0.5, x: 0.3 },
-          colors: ['#10B981', '#34D399', '#FBBF24']
+          colors: ['#B8860B', '#D4A853', '#E8C47C']
         });
         confetti({
           particleCount: 80,
           spread: 100,
           origin: { y: 0.5, x: 0.7 },
-          colors: ['#10B981', '#34D399', '#FBBF24']
+          colors: ['#B8860B', '#D4A853', '#E8C47C']
         });
       }, 400);
     }
@@ -151,38 +151,38 @@ export default function Quiz() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-brand-dark via-foreground to-brand-dark">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-brand-light to-background">
 
       {/* Background Decor */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
-          className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-primary/20 blur-3xl"
+          className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-primary/10 blur-3xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-accent/10 blur-3xl"
+          className="absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-accent/8 blur-3xl"
           animate={{ scale: [1, 1.15, 1], opacity: [0.2, 0.5, 0.2] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
         <motion.div
-          className="absolute left-1/2 top-1/3 h-60 w-60 -translate-x-1/2 rounded-full bg-primary/10 blur-2xl"
+          className="absolute left-1/2 top-1/3 h-60 w-60 -translate-x-1/2 rounded-full bg-primary/8 blur-2xl"
           animate={{ scale: [1, 1.3, 1], opacity: [0.15, 0.4, 0.15] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
         {/* Extra floating particles */}
         <motion.div
-          className="absolute right-1/4 top-1/4 h-3 w-3 rounded-full bg-accent/40"
+          className="absolute right-1/4 top-1/4 h-3 w-3 rounded-full bg-accent/30"
           animate={{ y: [0, -30, 0], x: [0, 10, 0], opacity: [0.4, 0.8, 0.4] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute left-1/4 bottom-1/3 h-2 w-2 rounded-full bg-primary/50"
+          className="absolute left-1/4 bottom-1/3 h-2 w-2 rounded-full bg-primary/30"
           animate={{ y: [0, -20, 0], x: [0, -8, 0], opacity: [0.3, 0.7, 0.3] }}
           transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
         />
         <motion.div
-          className="absolute right-1/3 bottom-1/4 h-4 w-4 rounded-full bg-accent/30"
+          className="absolute right-1/3 bottom-1/4 h-4 w-4 rounded-full bg-accent/20"
           animate={{ y: [0, -25, 0], opacity: [0.2, 0.6, 0.2] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         />
@@ -197,20 +197,20 @@ export default function Quiz() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="flex items-center justify-between text-xs text-primary-foreground/70">
+          <div className="flex items-center justify-between text-xs text-foreground/60">
             <span>Étape {currentIndex} sur {questions.length - 2}</span>
             <motion.span
               key={Math.round(progress)}
-              initial={{ scale: 1.3, color: "hsl(45, 100%, 50%)" }}
-              animate={{ scale: 1, color: "hsla(0, 0%, 100%, 0.7)" }}
+              initial={{ scale: 1.3, color: "hsl(38, 80%, 55%)" }}
+              animate={{ scale: 1, color: "hsl(28, 15%, 40%)" }}
               transition={{ duration: 0.4 }}
             >
               {Math.round(progress)}%
             </motion.span>
           </div>
-          <div className="h-2.5 w-full overflow-hidden rounded-full bg-primary-foreground/10 shadow-inner">
+          <div className="h-2.5 w-full overflow-hidden rounded-full bg-foreground/10 shadow-inner">
             <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-primary via-primary to-accent shadow-[0_0_12px_hsl(152,100%,32%,0.5)]"
+              className="h-full rounded-full bg-gradient-to-r from-primary via-primary to-accent shadow-[0_0_12px_hsl(30,60%,42%,0.4)]"
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             />
@@ -230,7 +230,7 @@ export default function Quiz() {
             style={{ perspective: 1000 }}
           >
             <motion.div
-              className="rounded-2xl border border-primary-foreground/10 bg-primary-foreground/5 p-6 shadow-2xl backdrop-blur-xl sm:p-8"
+              className="rounded-2xl border border-border bg-card p-6 shadow-2xl backdrop-blur-xl sm:p-8"
               variants={staggerChildren}
               initial="enter"
               animate="center"
@@ -245,12 +245,13 @@ export default function Quiz() {
                 <motion.div
                   className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent shadow-lg shadow-primary/30"
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  animate={{ boxShadow: ["0 10px 15px -3px hsla(152,100%,32%,0.3)", "0 10px 25px -3px hsla(45,100%,50%,0.3)", "0 10px 15px -3px hsla(152,100%,32%,0.3)"] }}
+                  animate={{ boxShadow: ["0 10px 15px -3px hsla(30,60%,42%,0.3)", "0 10px 25px -3px hsla(38,80%,55%,0.3)", "0 10px 15px -3px hsla(30,60%,42%,0.3)"] }}
                   transition={{ boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" } }}
                 >
                   {currentStep.type === 'intro' && <DollarSign className="h-8 w-8 text-primary-foreground" />}
                   {currentStep.type === 'question' && <TrendingUp className="h-8 w-8 text-primary-foreground" />}
                   {currentStep.type === 'final' && <Wallet className="h-8 w-8 text-primary-foreground" />}
+
                 </motion.div>
               </motion.div>
 
@@ -261,7 +262,7 @@ export default function Quiz() {
                   variants={childFadeUp}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 >
-                  <video autoPlay loop muted playsInline className="w-full rounded-xl">
+                  <video autoPlay loop muted playsInline className="w-full rounded-xl ring-1 ring-border">
                     <source src={currentStep.video} type="video/mp4" />
                   </video>
                 </motion.div>
@@ -281,7 +282,7 @@ export default function Quiz() {
 
                 {currentStep.title && (
                   <motion.h1
-                    className="text-2xl font-extrabold leading-tight text-primary-foreground sm:text-3xl"
+                    className="text-2xl font-extrabold leading-tight text-foreground sm:text-3xl"
                     variants={childFadeUp}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                   >
@@ -291,7 +292,7 @@ export default function Quiz() {
 
                 {currentStep.text && (
                   <motion.p
-                    className="text-base leading-relaxed text-primary-foreground/70"
+                    className="text-base leading-relaxed text-muted-foreground"
                     variants={childFadeUp}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                   >
@@ -314,7 +315,7 @@ export default function Quiz() {
                       {currentStep.recap.map((item, idx) => (
                         <motion.li
                           key={idx}
-                          className="flex items-start gap-3 text-sm text-primary-foreground/80"
+                          className="flex items-start gap-3 text-sm text-foreground/80"
                           initial={{ opacity: 0, x: -15 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.35, delay: 0.3 + idx * 0.1, ease: "easeOut" }}
@@ -336,7 +337,7 @@ export default function Quiz() {
 
                 {currentStep.question && (
                   <motion.h2
-                    className="text-lg font-bold text-primary-foreground sm:text-xl"
+                    className="text-lg font-bold text-foreground sm:text-xl"
                     variants={childFadeUp}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                   >
@@ -352,14 +353,14 @@ export default function Quiz() {
                     <motion.button
                       key={idx}
                       onClick={handleNext}
-                      className="flex w-full items-center justify-between rounded-xl border border-primary-foreground/10 bg-primary-foreground/5 px-5 py-4 text-left text-sm font-medium text-primary-foreground"
+                      className="flex w-full items-center justify-between rounded-xl border border-border bg-background px-5 py-4 text-left text-sm font-medium text-foreground"
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.35, delay: 0.2 + idx * 0.08, ease: "easeOut" }}
                       whileHover={{
                         scale: 1.02,
-                        borderColor: "hsla(152, 100%, 32%, 0.5)",
-                        backgroundColor: "hsla(152, 100%, 32%, 0.1)",
+                        borderColor: "hsla(30, 60%, 42%, 0.5)",
+                        backgroundColor: "hsla(30, 60%, 42%, 0.08)",
                         transition: { duration: 0.2 }
                       }}
                       whileTap={{ scale: 0.97 }}
@@ -367,7 +368,7 @@ export default function Quiz() {
                       {option}
                       <motion.div
                         className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/20"
-                        whileHover={{ x: 3, backgroundColor: "hsla(152, 100%, 32%, 0.4)" }}
+                        whileHover={{ x: 3, backgroundColor: "hsla(30, 60%, 42%, 0.4)" }}
                         transition={{ duration: 0.2 }}
                       >
                         <ChevronRight className="h-4 w-4 text-primary" />
@@ -377,13 +378,13 @@ export default function Quiz() {
                 ) : (
                   <motion.button
                     onClick={handleNext}
-                    className="relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-primary to-primary px-6 py-4 text-base font-bold text-primary-foreground shadow-lg shadow-primary/30"
+                    className="relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-primary to-accent px-6 py-4 text-base font-bold text-primary-foreground shadow-lg shadow-primary/30"
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.25 }}
                     whileHover={{
                       scale: 1.03,
-                      boxShadow: "0 20px 40px -10px hsla(152, 100%, 32%, 0.5)",
+                      boxShadow: "0 20px 40px -10px hsla(30, 60%, 42%, 0.4)",
                     }}
                     whileTap={{ scale: 0.96 }}
                   >
@@ -409,7 +410,7 @@ export default function Quiz() {
               {/* Footer Trust Indicators */}
               {currentStep.type === 'intro' && (
                 <motion.div
-                  className="mt-8 flex flex-wrap items-center justify-center gap-4 border-t border-primary-foreground/10 pt-6"
+                  className="mt-8 flex flex-wrap items-center justify-center gap-4 border-t border-border pt-6"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
@@ -421,11 +422,11 @@ export default function Quiz() {
                   ].map((item, idx) => (
                     <motion.div
                       key={idx}
-                      className="flex items-center gap-1.5 text-xs text-primary-foreground/50"
+                      className="flex items-center gap-1.5 text-xs text-muted-foreground"
                       initial={{ opacity: 0, y: 8 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: 0.7 + idx * 0.1 }}
-                      whileHover={{ scale: 1.05, color: "hsla(0, 0%, 100%, 0.7)" }}
+                      whileHover={{ scale: 1.05, color: "hsl(28, 15%, 30%)" }}
                     >
                       <item.icon className="h-3.5 w-3.5 text-primary" />
                       {item.label}
@@ -444,7 +445,7 @@ export default function Quiz() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <p className="text-center text-xs text-primary-foreground/30">
+          <p className="text-center text-xs text-muted-foreground/60">
             © {new Date().getFullYear()} Ebook Afrique Cash. Tous droits réservés.
           </p>
         </motion.div>
